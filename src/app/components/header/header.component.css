@@ -1,0 +1,7 @@
+@import url("../../../assets/styles/variables.css");
+.mat-toolbar{
+    background-color: #424242 ;
+}
+img:hover{
+    cursor: pointer;
+}
