@@ -1,5 +1,21 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 
 <router-outlet></router-outlet>
+ -->
 
+
+ <div *ngIf="!isSignedIn">
+     <h2>Sign Up</h2>
+     <input type="text" #emailSignup>
+     <input type="text" #passwordSignup>
+     <button (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
+ </div>
+ <hr>
+ <div *ngIf="!isSignedIn">
+    <h2>Login</h2>
+    <input type="text" #email>
+    <input type="text" #password>
+    <button (click)="onSignin(email.value,password.value)">Sign in</button>
+</div>
+<app-home *ngIf="isSignedIn" (isLogout)="handleLogut()"></app-home>
 <!-- <app-footer></app-footer> -->

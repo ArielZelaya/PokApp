@@ -8,8 +8,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
 import { PokeTableComponent } from './components/poke-table/poke-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+/* My imports */
 import { MaterialModule } from 'src/shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import {AngularFireModule} from '@angular/fire';
+import { HomeComponent } from './components/home/home.component';
+import { FirebaseService } from './services/firebase.service';
+
 
 @NgModule({
   declarations: [
@@ -17,16 +22,25 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HeaderComponent,
     PokeDetailComponent,
-    PokeTableComponent
+    PokeTableComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBb6p0GTtmmwmOZRoB9NwvlCE4wvkzUPEQ",
+      authDomain: "pokapp-auth.firebaseapp.com",
+      projectId: "pokapp-auth",
+      storageBucket: "pokapp-auth.appspot.com",
+      messagingSenderId: "859740831127",
+      appId: "1:859740831127:web:86c041fcafa931da9898d2"
+    })
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
