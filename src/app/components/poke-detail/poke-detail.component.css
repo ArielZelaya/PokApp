@@ -4,11 +4,40 @@
     margin-top: 20px;
     background-color: #bd3736;
 }
+.container{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
 
+table{
+    min-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+}
+.linea-evo{
+    font-weight: bold;
+    
+}
+.evo-div {
+    border-radius: 18px;
+    background-color: #fff;
+}
 .mat-chip-list-wrapper{
     text-align: center;
     margin: auto;
 }
+.mat-header-cell{
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
 
 .mat-card-header{
     background-color: #ffffff;
@@ -31,4 +60,9 @@
 .mat-chip{
     background-color: #424242 !important;
     
+}
+
+/*paginator*/
+::ng-deep.mat-paginator{
+   display: none !important;
 }

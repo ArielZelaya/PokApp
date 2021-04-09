@@ -37,7 +37,7 @@ export class PokeTableComponent implements OnInit {
       /* Para obtener la generacion no pude encontrar una forma mediante 
       la API (de seguro no revise bien) 
       asi que las defini segun su id en la pokedex */
-      let generation;
+ let generation;
       if(i>=1 && i<=150 ){
         generation = "primera Generacion";
       }else if(i>=151 && i<=251){
