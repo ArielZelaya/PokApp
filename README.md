@@ -1,9 +1,10 @@
 # PokApp
 Angular Pokedex
 
-#Instrucciones
+# Instrucciones
 Clonar el repositorio
 
-Ejecutar
--npm install 
--ng serve
+# Primer Paso
+npm install 
+# Segundo Paso
+ng serve
