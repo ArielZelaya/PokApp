@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isSignedIn = false;
 
   constructor(private router: Router) { }
 
@@ -16,5 +17,9 @@ export class HeaderComponent implements OnInit {
   home(){
 this.router.navigateByUrl('/home');
   }
-
+  handleLogut(){
+    this.isSignedIn = false;
+    location.reload();
+    
+  }
 }

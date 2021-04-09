@@ -64,5 +64,10 @@ table{
 
 /*paginator*/
 ::ng-deep.mat-paginator{
-   display: none !important;
+    display: none !important;
+ }
+
+ app-home {
+    position: fixed;
+    right: 10px;
 }

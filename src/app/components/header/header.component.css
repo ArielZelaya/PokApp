@@ -5,3 +5,7 @@
 img:hover{
     cursor: pointer;
 }
+
+.salir-text{
+    float: right !important;
+}

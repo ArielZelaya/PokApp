@@ -15,18 +15,21 @@ export class PokeDetailComponent implements OnInit {
   pokemonType = [];
   pokemonImg = '';
   pokemonSpecies = '';
+  img : any;
   pokemonEvoChain = '';
    evolutions = '';
   Pokevolutions:any = [];
   data:any[] = [];
   dataSource = new MatTableDataSource<any>(this.Pokevolutions);
 
-  constructor(private pokemonService: PokemonService, private activatedRouter: ActivatedRoute,private router: Router) {
+  constructor(private pokemonService: PokemonService, private activatedRouter: ActivatedRoute,private router: Router,) {
     this.activatedRouter.params.subscribe(
       params => {
           this.getPokemon(params['id']);
       }
     )
+    this.img = [];
+
    }
 
   ngOnInit(): void {
@@ -57,9 +60,23 @@ export class PokeDetailComponent implements OnInit {
                 /* llenamos el array de las evoluciones */
                 do {
                 var evoDetails = evoData['evolution_details'][0];
+                /*image for evolutions
+                Aqui logre obtener la url de la imagen de cada evolucion pero no la pude pasar al source de la tabla
+                */
+                 
+                var idpokedex = '';
+                this.pokemonService.getPokemons(evoData.species.name).subscribe(
+                  res =>{
+                      console.log(res.sprites.front_default);
+                      this.img =res.sprites.front_default;
+                      console.log("la image es: "+this.img);
+                  }
+                )
+
                 this.Pokevolutions.push( {
-                  'name':evoData.species.name,
-                  'url':evoData.species.url});
+                  'image':this.img,
+                  'name':evoData.species.name
+                  });
                 evoData = evoData['evolves_to'][0];
                 } while (!!evoData && evoData.hasOwnProperty('evolves_to'));
                 console.log("evo");

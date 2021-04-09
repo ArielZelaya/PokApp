@@ -1,21 +1,39 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 
 <router-outlet></router-outlet>
+ -->
 
+<div class="container-login">
 
-<!-- 
- <div *ngIf="!isSignedIn">
-     <h2>Sign Up</h2>
-     <input type="text" #emailSignup>
-     <input type="text" #passwordSignup>
-     <button (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
- </div>
- <hr>
- <div *ngIf="!isSignedIn">
-    <h2>Login</h2>
-    <input type="text" #email>
-    <input type="text" #password>
-    <button (click)="onSignin(email.value,password.value)">Sign in</button>
+   <div class="wrapper">
+
+    <img *ngIf="!isSignedIn" src="../assets/images/1920px-International_Pokémon_logo.svg.png" alt="pokemon logo" width="300">
+    
+    
+      
+
+ <div class="content" *ngIf="!isSignedIn">
+    <h2>Registrate</h2>
+    <input type="text" placeholder="correo" #emailSignup>
+    <input type="text" placeholder="contrasena" #passwordSignup>
+    <br>
+    <button (click)="onSignup(emailSignup.value,passwordSignup.value)">Registrate</button>
 </div>
-<app-home *ngIf="isSignedIn" (isLogout)="handleLogut()"></app-home> -->
+
+
+<div class="content" *ngIf="!isSignedIn">
+   <h2>Inicia Sesion</h2>
+   <input type="text" placeholder="correo" #email>
+   <input type="text" placeholder="contrasena" #password>
+   <br>
+   <button (click)="onSignin(email.value,password.value)">Inicia sesion</button>
+</div>
+<!-- //<app-home *ngIf="isSignedIn" (isLogout)="handleLogut()"></app-home> -->
+<app-header *ngIf="isSignedIn"></app-header>
+<router-outlet *ngIf="isSignedIn"></router-outlet>
+   </div>
+</div>
+
+
+
 <!-- <app-footer></app-footer> -->

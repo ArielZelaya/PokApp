@@ -44,6 +44,7 @@ table{
 ::ng-deep.mat-paginator{
     width: 80%;
     margin: auto;
+    display: block !important;
 }
 
 .mat-form.field{
@@ -55,4 +56,9 @@ table{
 
 ::ng-deep.mat-form-field-label{
     color: #bd3736 !important;
+}
+
+app-home {
+    position: fixed;
+    right: 10px;
 }
