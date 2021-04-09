@@ -1,2 +1,4 @@
 # PokApp
 Angular Pokedex
+
+# DEPLOYMENT DE HEROKU NOT FOR LOCAL
